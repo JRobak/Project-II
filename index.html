@@ -1,0 +1,205 @@
+<!--Szerokosc na jakiej strona była robiona: 1920 i webkit -->
+<!--Bartek Paskudzki-->
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<title>Robakowo</title>
+	<link rel="Shortcut icon" href="grafika/Rnalogo.png" />
+
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">		 
+			 
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src="script.js"></script>
+	
+<!--Czcionka-->
+	<link href="https://fonts.googleapis.com/css2?family=Blaka&family=Chakra+Petch&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Blaka&family=Boogaloo&family=Comic+Neue&family=Concert+One&family=Creepster&family=Inconsolata:wght@300&family=Indie+Flower&family=Josefin+Sans:wght@300&family=Lato:wght@300&family=Lobster&family=Press+Start+2P&family=Reenie+Beanie&family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">	
+<!--Czcionka-->
+
+</head>
+<body onload="zegarek(), data()" background="grafika/tlo1.png">
+  
+	<div id="naglowek">
+		<center><img id="esteregg" src="grafika/worm.png" onclick="esteregg()" style="cursor:pointer; width:140px; height:97px;"><span style="color:#FCC951; font-family: 'Blaka', cursive; text-shadow:3px 4px 2px #9c7d36;">Robakowo</span></center>
+						
+		<div id="zegar"></div>
+		<div id="data"></div>
+	</div>
+	
+	<div id="sliderZdjec" class="tlo">
+		<center><div id="sliderZdjecNaglowek">Slider Zdjec</div></center>
+		<div class="slideshow-container">
+
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/1.png" style="width:100%">
+			</div>
+
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/2.png" style="width:100%">
+			</div>
+
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/3.png" style="width:100%">
+			</div>
+			
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/4.png" style="width:100%">
+			</div>
+			
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/5.png" style="width:100%">
+			</div>
+			
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/6.png" style="width:100%">
+			</div>
+			
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/7.png" style="width:100%">
+			</div>
+			
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/8.png" style="width:100%">
+			</div>
+			
+			<div class="slide fade" style="border:4px solid black;">
+			  <img src="grafika/9.png" style="width:100%">
+			</div>
+
+			<a class="prev" onclick="zmianaSlide(-1)">❮</a>
+			<a class="next" onclick="zmianaSlide(1)">❯</a>
+		</div>
+
+		<script>
+			let index = 1;
+			pokaz(index);
+
+			function zmianaSlide(n){
+			  pokaz(index += n);
+			}
+
+			function wlasciwySlide(n){
+			  pokaz(index = n);
+			}
+
+			function pokaz(n){
+			  let i;
+			  let slideTeraz = document.getElementsByClassName("slide");
+			  let dots = document.getElementsByClassName("dot");
+			  if (n > slideTeraz.length) {index = 1}    
+			  if (n < 1) {index = slideTeraz.length}
+			  for (i = 0; i < slideTeraz.length; i++) {
+				slideTeraz[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slideTeraz[index-1].style.display = "block";  
+			  dots[index-1].className += " active";
+			}
+		</script>
+		</div><br>
+
+<center>
+	<div class="tlo" id="prost1">
+		<label>Wpisz tekst: <input oninput="wypisywanieTekstu()" type="text" id="tekstButton44" style="height:20px; width:220px; position:relative; top:-5px;" placeholder="max 15 znakow" maxlength="15"></label>
+					
+					<div id="wyswietlanieTekstu"><p id="tekstDoWys" style="margin:0; border-radius:40px;"></p></div>
+					
+					<label>Wybierz kolor napisu <input oninput="zmianaKoloru()" type="color" id="kolorNapisu" value="#ffffff"></label><br>
+					<label>Wybierz kolor tla <input oninput="zmianaKoloru()" type="color" id="kolorTla" value="#000000"></label><br>
+					
+					<label>Rozmiar: <input oninput="rozmiar(this.value)" id="rozmiar" type="range" max="80" min="1" value="20" step="1"></label><br>
+					
+					<label>Border Radius: <input oninput="rozmiarRadius(this.value)" id="rozmiarRadius" type="range" max="40" min="0" value="10" step="1"></label><br>
+					
+					<label>Czcionka <select id="czcionka" onchange="czcionka(this)">
+					  <option>Blaka</option>
+					  <option>Boogaloo</option>
+					  <option>Comic Neue</option>
+					  <option>Concert One</option>
+					  <option>Creepster</option>
+					  <option>Inconsolata</option>
+					  <option>Indie Flower</option>
+					  <option>Josefin Sans</option>
+					  <option>Lato</option>
+					  <option>Lobster</option>
+					  <option>Reenie Beanie</option>
+					  <option>Roboto</option>
+					  <option>Ubuntu</option>
+					</select></label><br>
+					
+					<label>Text Shadow:  
+						<input oninput="textShadow()" id="numerShadow1" style="width:30px;" type="number">
+						<input oninput="textShadow()" id="numerShadow2" style="width:30px;" type="number">
+						<input oninput="textShadow()" id="numerShadow3" style="width:30px;" type="number">
+						<input oninput="textShadow()" id="colorShadow" type="color">
+					</label><br>
+					
+					<label>Border:  
+						<input oninput="border(this)" id="numerBorder" style="width:30px;" type="number">
+						<select id="borderStyle" onchange="border(this)">
+						  <option>dotted</option>
+						  <option>dashed</option>
+						  <option>solid</option>
+						  <option>double</option>
+						  <option>none</option>
+						  <option>hidden</option>
+						</select>
+						<input oninput="border(this)" id="colorBorder" type="color">
+					</label><br>
+					
+					<label>Bold: <input oninput="checkboxText()" type="checkbox" id="checkbox1"></label>
+					<label> Italic: <input oninput="checkboxText()" type="checkbox" id="checkbox2"></label><br>
+	</div>
+	
+	<div class="tlo" id="prost2">
+
+		<center><h2 style="margin:0;">Wylosuj liczbe w danym zakresie</h2><br>
+		<label style="font-size:35px;">
+		Od:<input type="number" placeholder="od" id="min"> 
+		Do: <input id="max" type="number" placeholder="do"></label>
+		<div id="wylosowanaLiczba"></div>
+		<input style="margin-top:10px;" type="button" onclick="wylosuj()" value="Wylosuj!"></center>
+
+	</div>
+	<div class="tlo" id="prost3">
+		<center><h3 style="margin:0;" id="napisProst3">Podaj liczbe i sprawdz czy jest pierwsza</h3><br>
+		<input type="number" placeholder="podaj liczbe" id="podanaLiczba" oninput="sprawdzCzyLiczbaPierwsza()"> <br>
+		<span id="odpowiedzDoPodanejLiczby"></span>
+		</center>
+		
+		<script>
+			function sprawdzCzyLiczbaPierwsza(){
+				var liczba = document.getElementById('podanaLiczba').value;
+				var odpowiedz = document.getElementById('odpowiedzDoPodanejLiczby');
+				
+				if(sprawdzenia(liczba)){
+					odpowiedz.innerHTML = ('Podana liczba jest liczba pierwsza');
+				} else{
+					odpowiedz.innerHTML = ('Podana liczba nie jest liczba pierwsza');
+				}
+				function sprawdzenia(liczba){
+					if(liczba<=1){
+						return false;
+					}
+
+					for(var i=2; i<=Math.sqrt(liczba); i++){
+						if(!(liczba%i)){
+							return false;
+						}
+					} 
+
+					return true;
+				}
+			}	
+		</script>
+	</div>
+	<div style="clear:both;"> </div>
+</center>
+	
+	
+</body>	

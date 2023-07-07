@@ -1,0 +1,206 @@
+/*
+
+font-family: 'Blaka', cursive;
+font-family: 'Boogaloo', cursive;
+font-family: 'Comic Neue', cursive;
+font-family: 'Concert One', cursive;
+font-family: 'Creepster', cursive;
+font-family: 'Inconsolata', monospace;
+font-family: 'Indie Flower', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Reenie Beanie', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+
+*/
+
+body{
+	color:white;
+}
+#naglowek{
+	font-size:100px;
+}
+
+#zegar{
+	position:absolute;
+	top:20px;
+	right:15px;
+	font-size:70px;
+	color:#ccc;
+	font-family: 'Itim', cursive;
+}
+#data{
+	position:absolute;
+	top:2px;
+	left:20px;
+	font-size:50px;
+	color:#ccc;
+	font-family: 'Itim', cursive;
+}
+
+#sliderZdjec{
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+	margin-top:20px;
+	padding-bottom:20px;
+}
+#sliderZdjecNaglowek{
+	color:white;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size:75px;
+	text-shadow: 6px 6px 7px #5e5e5e;
+}
+.slide {display: none}
+img {vertical-align: middle;}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.tlo{
+	background-color:#3d3e40;
+	box-shadow: 15px 15px 34px 13px rgba(37, 38, 39, 1);
+	border-radius:25px;
+	margin-left:20px;
+	margin-right:25px;
+}
+input[type=color]{
+	background-color:#3d3e40;
+	border:none;
+	outline: none; 
+}
+input[type=button]{
+	background-color:#595959; 
+	cursor:pointer;
+	width:140px;
+	height:50px;
+	font-size:30px;
+	font-family: 'Concert One', cursive;
+}
+input[type=button]:hover{
+	background-color:#404040;
+}	
+input[type=color]:hover{
+	cursor:pointer;
+}
+select {
+  padding: 5px 7px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+input[type=range]{
+	appearance: none;
+	height:10px;
+	background: #d3d3d3; 
+	outline: none; 
+	opacity: 0.7; 
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	cursor: pointer;
+	border-radius: 5px;  
+}
+input[type=range]:hover{
+	opacity: 1; 
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%; 
+  background: #8c8c8c;
+  cursor: pointer;
+}
+input[type=number]{
+	background-color:white; 
+	cursor:pointer;
+	width:50px;
+	height:25px;
+}
+input[type=number]:hover{
+	background-color:#cccccc;
+}
+#prost1{
+	width:30%; 
+	text-align:center; 
+	padding:20px; 
+	float:left;
+	font-size:23px;
+	font-family: 'Boogaloo', cursive;
+}
+#wyswietlanieTekstu{
+	margin:0;
+	padding:0;
+	font-size:15px;
+}
+
+#prost2{
+	float:left; 
+	width:30%; 
+	font-size:25px;
+	font-family: 'Boogaloo', cursive;
+	padding:15px 0px;
+}
+#wylosowanaLiczba{
+	font-family: 'Concert One', cursive;
+	font-size:80px;
+	text-shadow:3px 3px 2px #ccc;
+}
+
+#prost3{
+	float:left; 
+	width:30%; 
+	font-size:23px;
+	font-family: 'Boogaloo', cursive;
+	padding-bottom:30px;
+}
+#napisProst3{
+	padding:20px 20px 0px 20px;
+	font-size:50px; 
+}
+#odpowiedzDoPodanejLiczby{
+	font-family: 'Concert One', cursive;
+	font-size:30px;
+	text-shadow:3px 3px 2px black;
+}
+#podanaLiczba{
+	width:90px;
+}
+
+
+
